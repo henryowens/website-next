@@ -1,5 +1,5 @@
 const Home = () => (
-  <main>
+  <main id="HomePage">
     <h1>Home</h1>
   </main>
 );

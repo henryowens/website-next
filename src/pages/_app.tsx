@@ -1,14 +1,18 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <div>
+import Layout from "@/Layout";
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => (
+  <div id="App">
     <Head>
       <title>Wenso</title>
       <meta name="description" content="Wenso public website" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   </div>
 );
 
