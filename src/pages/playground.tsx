@@ -1,10 +1,10 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
 
 const Playground = () => (
-  <div>
+  <Flex gap={5}>
     <Button variant="outline">Outline</Button>
-    <Button>Fill</Button>
-  </div>
+    <Button variant="solid">Solid</Button>
+  </Flex>
 );
 
 export default Playground;

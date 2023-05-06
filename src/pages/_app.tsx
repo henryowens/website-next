@@ -19,8 +19,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
         <meta name="description" content="Wenso public website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ColorModeScript initialColorMode={customTheme.initialColorMode} />
-
+      <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
       <Layout>
         <CSSReset />
         <Component {...pageProps} />
