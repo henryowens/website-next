@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div id="Layout">
+    <Flex id="Layout" flexDirection="column" marginBottom="5">
       <header>
         <Flex justifyContent="space-between" alignItems="center">
           <Heading as="h2" fontSize="4xl">
@@ -13,7 +13,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
         </Flex>
       </header>
       {children}
-    </div>
+    </Flex>
   );
 };
 

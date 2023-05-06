@@ -1,4 +1,4 @@
-import { Container, ChakraProvider, CSSReset } from "@chakra-ui/react";
+import { Container, ChakraProvider, CSSReset, ColorModeScript, theme } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
@@ -13,6 +13,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
         <meta name="description" content="Wenso public website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <ColorModeScript  initialColorMode={customTheme.initialColorMode}  />
+
       <Layout>
         <CSSReset />
         <Component {...pageProps} />
