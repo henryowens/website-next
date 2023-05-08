@@ -5,7 +5,9 @@ import * as Yup from "yup";
 
 import emailService from "@/service/email";
 
-const FormikForm = dynamic(() => import("@/components/FormikForm"));
+const FormikForm = dynamic(() => import("@/components/FormikForm"), {
+  loading: () => <p>Loading...</p>,
+});
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,8 +19,8 @@ const Contact: React.FC = () => {
       </Heading>
       {isSubmitted ? (
         <Text>
-          Thank you for sending your message. <br />
-          I will response via email as soon as I can.
+          Thank you for sending your message. <br />I will response via email as
+          soon as I can.
         </Text>
       ) : (
         <FormikForm

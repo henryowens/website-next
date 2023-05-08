@@ -6,29 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.6.1",
     "@emailjs/browser": "^3.11.0",
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
     "@fontsource/josefin-sans": "^4.5.12",
     "@fontsource/space-mono": "^4.5.12",
-    "@types/node": "18.16.3",
-    "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.3",
-    "axios": "^1.4.0",
-    "dotenv": "^16.0.3",
     "eslint": "8.39.0",
     "eslint-config-next": "13.4.0",
     "formik": "^2.2.9",
-    "framer-motion": "^10.12.7",
     "next": "13.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.4",
     "yup": "^1.1.1"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.1",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.5",
+    "@types/react-dom": "18.2.3",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3"
   }
 }
