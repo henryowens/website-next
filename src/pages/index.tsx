@@ -1,11 +1,15 @@
-import { Container, Flex, Heading, Text, TextProps } from "@chakra-ui/react";
+import { Flex, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
 
 const Home = () => (
-  <Container as={Flex} flexDirection="column" gap="50" maxW="4xl" id="HomePage">
-    <Heading as="h1" fontSize="8xl">
+  <Flex
+    id="HomePage"
+    flexDirection="column"
+    gap={useBreakpointValue({ base: 35, sm: 50 })}
+  >
+    <Heading as="h1" fontSize={useBreakpointValue({ base: "6xl", sm: "8xl" })}>
       Web <br /> Developer
     </Heading>
-    <Flex justifyContent="space-around">
+    <Flex justifyContent="space-around" flexWrap="wrap">
       {["REACT", "VUE.JS", "NODE.JS", "MONGO"].map((skill, i) => (
         <Text fontSize="4xl" fontWeight="bold" opacity="20%" key={i}>
           {skill}
@@ -16,7 +20,7 @@ const Home = () => (
       Hi! I{"'"}m Henry, <br />
       Crafting fast, cutting-edge websites that scale.
     </Text>
-  </Container>
+  </Flex>
 );
 
 export default Home;

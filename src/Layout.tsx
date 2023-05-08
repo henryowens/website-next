@@ -4,6 +4,8 @@ import {
   Flex,
   useColorMode,
   IconProps,
+  Container,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
@@ -18,26 +20,36 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     _hover: { cursor: "pointer" },
     boxSize: 5,
   };
-  const onContact = () => window.open("mailto:henry.tom.owens@gmail.com");
+
   return (
     <Flex id="Layout" flexDirection="column">
       <header>
         <Flex
           justifyContent="space-between"
           alignItems="center"
-          marginBottom="20"
+          marginBottom={useBreakpointValue({ base: "10", sm: "20" })}
         >
           <Heading
             as="h2"
-            fontSize="3xl"
+            fontSize={useBreakpointValue({ base: "2xl", sm: "3xl" })}
             opacity="50%"
             _hover={{ cursor: "pointer" }}
+            paddingTop='2'
             onClick={() => push("/")}
           >
             HENRY OWENS
           </Heading>
           <Flex alignItems="center" gap={4}>
-            <Button variant="outline" onClick={onContact}>
+            <Button
+              as="a"
+              size={useBreakpointValue({ base: "sm", sm: "md" })}
+              variant="outline"
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                push("/contact");
+              }}
+            >
               Contact
             </Button>
             {IsThemeLight() ? (
@@ -48,7 +60,9 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
           </Flex>
         </Flex>
       </header>
-      {children}
+      <Container id="LayoutContainer" maxW="4xl" padding="0">
+        {children}
+      </Container>
     </Flex>
   );
 };

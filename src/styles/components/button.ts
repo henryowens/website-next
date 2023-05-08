@@ -11,6 +11,7 @@ const baseStyle: SystemStyleObject = {
   borderColor: "blackAlpha.500",
   border: "1px solid",
   fontWeight: "normal",
+  _hover: { cursor: "pointer" },
 };
 
 const variants = {
